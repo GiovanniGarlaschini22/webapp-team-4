@@ -94,7 +94,7 @@ const AggiungiViaggio = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mb-5">
           Salva Viaggio
         </button>
       </form>

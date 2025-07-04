@@ -158,7 +158,6 @@ const CardDetails = ({ selectedTrip, onClose }) => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

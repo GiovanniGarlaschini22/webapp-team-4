@@ -62,19 +62,6 @@ const AppHeader = () => {
                   Rubrica
                 </Link>
               </li>
-              <li className="nav-item mx-1">
-                <Link
-                  className="nav-link fw-medium text-white px-3 py-2 rounded-pill text-center d-flex align-items-center justify-content-center nav-btn"
-                  to="/contattaci"
-                  style={{
-                    transition: 'all 0.3s ease',
-                    fontSize: '0.85rem',
-                    minWidth: '90px'
-                  }}
-                >
-                  Contattaci
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
