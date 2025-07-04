@@ -11,14 +11,7 @@ import { Link } from "react-router-dom";const AppButtons = () => {
       }}>
         Esplora Viaggi
       </button>
-           <Link to="/aggiungi-viaggio" className="btn btn-success fw-bold" style={{
-        color: 'white',
-        borderRadius: '25px',
-        fontSize: '0.9rem',
-        transition: 'all 0.3s ease'
-      }}>
-          Aggiungi Nuovo Viaggio
-        </Link>
+         
     </div>
   );
 };

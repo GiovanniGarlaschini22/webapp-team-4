@@ -67,7 +67,7 @@ const viaggiInCorso = [
     destinazione: "San Paolo",
     dataInizio: "2025-06-26",
     dataFine: "2025-07-14",
-    immagine: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS1FIMYmW1A94TLzWBoiyNCgqf7v429WbUPw&s"
+    immagine: "https://www.viagginews.com/wp-content/uploads/2017/02/san_paolo_brasile.jpeg"
 
   }
 ];
