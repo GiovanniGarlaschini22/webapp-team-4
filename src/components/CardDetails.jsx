@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const CardDetails = ({ selectedTrip, onClose }) => {
+  const navigate = useNavigate()
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('it-IT', {
@@ -6,6 +9,12 @@ const CardDetails = ({ selectedTrip, onClose }) => {
       month: 'long',
       day: 'numeric'
     });
+  };
+
+    //PARTE NUOVA Fra//
+  const handleCLick = () => {
+    onClose()
+    navigate(`/rubrica?id=${selectedTrip.id}`);
   };
 
   const calculateDuration = (startDate, endDate) => {
@@ -134,20 +143,7 @@ const CardDetails = ({ selectedTrip, onClose }) => {
           <div className="modal-footer border-0 p-3" style={{ backgroundColor: '#E7F0FF' }}>
             <button
               type="button"
-              className="btn px-3 py-2 fw-bold me-2 d-flex align-items-center justify-content-center modal-btn"
-              style={{
-                backgroundColor: '#D8E4F0',
-                borderColor: '#D8E4F0',
-                color: '#223454',
-                borderRadius: '25px',
-                fontSize: '0.8rem'
-              }}
-              onClick={onClose}
-            >
-              Chiudi
-            </button>
-            <button
-              type="button"
+              onClick={handleCLick}
               className="btn px-3 py-2 fw-bold d-flex align-items-center justify-content-center modal-btn"
               style={{
                 backgroundColor: '#384FD8',
@@ -157,27 +153,12 @@ const CardDetails = ({ selectedTrip, onClose }) => {
                 fontSize: '0.8rem'
               }}
             >
-              Prenota ora
+              Vai a rubrica
             </button>
           </div>
         </div>
       </div>
 
-      <style>
-        {`
-          .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(56, 79, 216, 0.3);
-          }
-          
-          @media (max-width: 576px) {
-            .modal-btn {
-              padding: 0.4rem 1.5rem !important;
-              font-size: 0.7rem !important;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 };

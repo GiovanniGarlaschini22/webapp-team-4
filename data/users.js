@@ -926,7 +926,7 @@ const users = [
     telefono: "+39 351 456 7890",
     email: "ginevra.moretti@email.com",
     viaggioId: 10,
-    destinazione: "Reykjavík"
+    destinazione: "San Paolo"
   },
   {
     id: 92,
@@ -936,7 +936,7 @@ const users = [
     telefono: "+39 362 789 0123",
     email: "emilio.benedetto@email.com",
     viaggioId: 10,
-    destinazione: "Reykjavík"
+    destinazione: "San Paolo"
   },
   {
     id: 93,
@@ -946,7 +946,7 @@ const users = [
     telefono: "+39 373 012 3456",
     email: "viola.martinelli@email.com",
     viaggioId: 10,
-    destinazione: "Reykjavík"
+    destinazione: "San Paolo"
   },
   {
     id: 94,
@@ -956,7 +956,7 @@ const users = [
     telefono: "+39 384 345 6789",
     email: "armando.gentili@email.com",
     viaggioId: 10,
-    destinazione: "Reykjavík"
+    destinazione: "San Paolo"
   }
 ];
 

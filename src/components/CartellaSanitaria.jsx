@@ -84,7 +84,7 @@ const CartellaSanitaria = ({ user, onClose }) => {
                                         <div className="p-3 rounded" style={{ backgroundColor: '#F8FBFF', border: '1px solid #E7F0FF' }}>
                                             <h6 className="fw-bold mb-2 d-flex align-items-center" style={{ color: '#223454' }}>
                                                 <i className="fas fa-credit-card me-2" style={{ color: '#384FD8' }}></i>
-                                                Tessera Sanitaria
+                                                Codice Fiscale
                                             </h6>
                                             <div className="p-2 rounded" style={{ backgroundColor: '#E7F0FF' }}>
                                                 <code className="fw-bold" style={{ color: '#223454', fontSize: '0.9rem', backgroundColor: 'transparent' }}>
@@ -178,36 +178,7 @@ const CartellaSanitaria = ({ user, onClose }) => {
                     </div>
                 </div>
             </div>
-            <div className="modal-backdrop fade show" onClick={onClose}></div>
-
-            <style>
-                {`
-                    .print-btn:hover {
-                        background-color: #2c3faa !important;
-                        border-color: #2c3faa !important;
-                        transform: translateY(-2px);
-                        box-shadow: 0 5px 15px rgba(56, 79, 216, 0.3);
-                    }
-                    
-                    @media print {
-                        .modal-backdrop,
-                        .modal-header,
-                        .modal-footer {
-                            display: none !important;
-                        }
-                        
-                        .modal-dialog {
-                            margin: 0 !important;
-                            max-width: 100% !important;
-                        }
-                        
-                        .modal-content {
-                            border: none !important;
-                            box-shadow: none !important;
-                        }
-                    }
-                `}
-            </style>
+            <div onClick={onClose}></div>
         </div>
     );
 };

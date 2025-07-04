@@ -64,10 +64,11 @@ const viaggiInCorso = [
   },
   {
     id: 10,
-    destinazione: "Reykjavík",
+    destinazione: "San Paolo",
     dataInizio: "2025-06-26",
     dataFine: "2025-07-14",
-    immagine: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop&fm=webp&q=80"
+    immagine: "https://images.unsplash.com/photo-1535136104956-115a2b1b048d?w=500&h=300&fit=crop&fm=webp&q=80"
+
   }
 ];
 

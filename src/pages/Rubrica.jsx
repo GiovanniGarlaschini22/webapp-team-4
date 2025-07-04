@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
 import ViaggioSelector from '../components/ViaggioSelector';
 import PartecipantiTable from '../components/PartecipantiTable';
 import SearchBar from '../components/SearchBar';
 import users from '../../data/users.js';
 import viaggiInCorso from '../../data/currentTrip.js';
+import { useLocation } from "react-router-dom";
 
 const Rubrica = () => {
     const [selectedViaggioId, setSelectedViaggioId] = useState(null);
@@ -15,6 +16,30 @@ const Rubrica = () => {
         setIsSearching(false);
         setSearchResults([]);
     };
+
+    //PARTE NUOVA Fra//
+    const location = useLocation();
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const idFromUrl = params.get("id");
+        if (idFromUrl) {
+            const id = parseInt(idFromUrl);
+            const exists = viaggiInCorso.find((v) => v.id === id);
+            if (exists) {
+                setSelectedViaggioId(id);
+            }
+        }
+    }, [location.search, selectedViaggioId]);
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const idFromUrl = params.get("id");
+        if (idFromUrl) {
+            window.scrollTo({ top: 100, behavior: "smooth" });
+        }
+    }, [location.search]);
+
 
     const handleSearch = (searchTerm) => {
         if (searchTerm.trim() === '') {
@@ -114,7 +139,7 @@ const Rubrica = () => {
                         {(selectedViaggioId || (isSearching && searchResults.length > 0)) && (
                             <PartecipantiTable
                                 viaggio={getSelectedViaggio()}
-                                partecipanti={getParticipanti()}
+                                partecipanti={getPartecipanti()}
                                 isSearchMode={isSearching}
                             />
                         )}
@@ -177,20 +202,6 @@ const Rubrica = () => {
                     </div>
                 </div>
             </div>
-
-            <style>
-                {`
-                    @media (max-width: 768px) {
-                        .display-6 {
-                            font-size: 2rem !important;
-                        }
-                        
-                        .lead {
-                            font-size: 1.1rem !important;
-                        }
-                    }
-                `}
-            </style>
         </div>
     );
 };

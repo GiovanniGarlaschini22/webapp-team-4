@@ -81,27 +81,6 @@ const TripCard = ({ viaggio, onDetailsClick }) => {
           </button>
         </div>
       </div>
-
-      <style>
-        {`
-          .trip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(56, 79, 216, 0.2);
-          }
-          
-          .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(56, 79, 216, 0.3);
-          }
-          
-          @media (max-width: 576px) {
-            .card-btn {
-              padding: 0.4rem 1.5rem !important;
-              font-size: 0.75rem !important;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 };

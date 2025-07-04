@@ -158,23 +158,6 @@ const AppFooter = () => {
           </div>
         </div>
       </div>
-
-      <style>
-        {`
-          footer a:hover {
-            color: #fff !important;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-            background-color: rgba(255,255,255,0.2) !important;
-          }
-          
-          @media (max-width: 768px) {
-            footer .container {
-              text-align: center;
-            }
-          }
-        `}
-      </style>
     </footer>
   );
 };
