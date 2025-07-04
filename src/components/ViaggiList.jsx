@@ -5,7 +5,6 @@ const ViaggiList = () => {
   const [viaggi, setViaggi] = useState(viaggiInCorso);
   const [showForm, setShowForm] = useState(false);
 
-  // form state
   const [titolo, setTitolo] = useState("");
   const [descrizione, setDescrizione] = useState("");
   const [dataInizio, setDataInizio] = useState("");
@@ -33,7 +32,6 @@ const ViaggiList = () => {
     setViaggi(aggiornati);
     viaggiInCorso.push(nuovoViaggio);
 
-    // reset form
     setTitolo("");
     setDescrizione("");
     setDataInizio("");

@@ -12,7 +12,6 @@ const SearchBar = ({ onSearch }) => {
         const value = e.target.value;
         setSearchTerm(value);
 
-        // Ricerca in tempo reale
         if (value.trim() === '') {
             onSearch('');
         }

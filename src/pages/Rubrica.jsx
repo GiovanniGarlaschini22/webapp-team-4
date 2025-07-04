@@ -74,7 +74,7 @@ const Rubrica = () => {
             <div className="container py-4">
                 <div className="row">
                     <div className="col-12">
-                        {/* Page Header */}
+
                         <div className="text-center mb-5">
                             <div className="d-inline-flex align-items-center justify-content-center mb-3" style={{
                                 width: '60px',
@@ -93,10 +93,8 @@ const Rubrica = () => {
                             </p>
                         </div>
 
-                        {/* Search Bar */}
                         <SearchBar onSearch={handleSearch} />
 
-                        {/* Search Results Message */}
                         {isSearching && searchResults.length === 0 && (
                             <div className="card border-0 shadow-sm mb-4" style={{ borderRadius: '15px' }}>
                                 <div className="card-body text-center py-4" style={{ backgroundColor: '#FFF3CD' }}>
@@ -111,7 +109,6 @@ const Rubrica = () => {
                             </div>
                         )}
 
-                        {/* Viaggio Selector */}
                         {!isSearching && (
                             <ViaggioSelector
                                 viaggi={viaggiInCorso}
@@ -120,7 +117,6 @@ const Rubrica = () => {
                             />
                         )}
 
-                        {/* Empty State */}
                         {!isSearching && !selectedViaggioId && (
                             <div className="card border-0 shadow-sm" style={{ borderRadius: '15px' }}>
                                 <div className="card-body text-center py-5" style={{ backgroundColor: '#E7F0FF' }}>
@@ -135,7 +131,6 @@ const Rubrica = () => {
                             </div>
                         )}
 
-                        {/* Partecipanti Table */}
                         {(selectedViaggioId || (isSearching && searchResults.length > 0)) && (
                             <PartecipantiTable
                                 viaggio={getSelectedViaggio()}
@@ -144,7 +139,6 @@ const Rubrica = () => {
                             />
                         )}
 
-                        {/* Statistics */}
                         {(selectedViaggioId || isSearching) && getPartecipanti().length > 0 && (
                             <div className="row g-3 mt-4">
                                 <div className="col-md-6">

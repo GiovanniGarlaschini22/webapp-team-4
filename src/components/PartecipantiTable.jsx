@@ -77,7 +77,6 @@ const PartecipantiTable = ({ viaggio, partecipanti, isSearchMode }) => {
                 </div>
             </div>
 
-            {/* Modal Cartella Sanitaria */}
             {selectedUser && (
                 <CartellaSanitaria
                     user={selectedUser}
