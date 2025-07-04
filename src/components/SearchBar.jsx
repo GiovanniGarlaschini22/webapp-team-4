@@ -39,7 +39,7 @@ const SearchBar = ({ onSearch }) => {
                                 value={searchTerm}
                                 onChange={handleInputChange}
                             />
-                            <button className="btn btn-primary" type="submit">
+                            <button className="btn btn-primary ms-2 me-2" type="submit">
                                 <i className="fas fa-search"></i> Cerca
                             </button>
                             {searchTerm && (

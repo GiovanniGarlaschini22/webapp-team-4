@@ -67,7 +67,7 @@ const viaggiInCorso = [
     destinazione: "San Paolo",
     dataInizio: "2025-06-26",
     dataFine: "2025-07-14",
-    immagine: "https://images.unsplash.com/photo-1535136104956-115a2b1b048d?w=500&h=300&fit=crop&fm=webp&q=80"
+    immagine: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS1FIMYmW1A94TLzWBoiyNCgqf7v429WbUPw&s"
 
   }
 ];
