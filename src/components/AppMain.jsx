@@ -2,9 +2,11 @@ import { useState } from 'react';
 import viaggiInCorso from '../../data/currentTrip.js';
 import TripCard from './TripCard';
 import CardDetails from './CardDetails';
+import AggiungiViaggio from "../pages/AggiungiViaggio";
 
 const AppMain = () => {
   const [selectedTrip, setSelectedTrip] = useState(null);
+   const [trips, setTrips] = useState(viaggiInCorso);
 
   const handleDettagli = (viaggio) => {
     setSelectedTrip(viaggio);
@@ -13,7 +15,10 @@ const AppMain = () => {
   const closeDetails = () => {
     setSelectedTrip(null);
   };
-
+const aggiungiViaggio = (nuovoViaggio) => {
+    console.log("Aggiungo viaggio:", nuovoViaggio);
+    setTrips((prev) => [...prev, nuovoViaggio]);
+  };
   return (
     <main className="py-0" style={{ backgroundColor: '#EBF2F9' }}>
       <div className="container-fluid px-0">
@@ -38,10 +43,13 @@ const AppMain = () => {
             </div>
           </div>
         </div>
+           <div className="container">
+          <AggiungiViaggio onAggiungi={aggiungiViaggio} />
+        </div>
 
         <div className="container">
           <div className="row g-4 pb-5">
-            {viaggiInCorso.map((viaggio) => (
+            {trips.map((viaggio) => (
               <TripCard
                 key={viaggio.id}
                 viaggio={viaggio}

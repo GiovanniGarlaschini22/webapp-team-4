@@ -105,7 +105,7 @@ const CartellaSanitaria = ({ user, onClose }) => {
                                             <a
                                                 href={`mailto:${user.email}`}
                                                 className="text-decoration-none d-flex align-items-center"
-                                                style={{ color: '#384FD8' }}
+                                                style={{ color: '#384FD8', fontSize: '0.7rem' }}
                                             >
                                                 <i className="fas fa-external-link-alt me-1" style={{ fontSize: '0.8rem' }}></i>
                                                 {user.email}

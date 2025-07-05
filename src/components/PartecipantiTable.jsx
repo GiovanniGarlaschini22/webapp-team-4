@@ -37,30 +37,31 @@ const PartecipantiTable = ({ viaggio, partecipanti, isSearchMode }) => {
                         <table className="table table-hover">
                             <thead className="table-dark">
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th className="d-none d-md-table-cell" scope="col">#</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Cognome</th>
                                     {isSearchMode && <th scope="col">Destinazione</th>}
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Telefono</th>
-                                    <th scope="col">Azioni</th>
+                                    <th scope="col" className="d-none d-md-table-cell">Email</th>
+                                    <th scope="col" className="d-none d-md-table-cell">Telefono</th>
+                                    <th scope="col">Profilo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {partecipanti.map((partecipante, index) => (
                                     <tr key={partecipante.id}>
-                                        <th scope="row">{index + 1}</th>
+                                        <th scope="row" className="d-none d-md-table-cell">{index + 1}</th>
                                         <td>{partecipante.nome}</td>
                                         <td>{partecipante.cognome}</td>
                                         {isSearchMode && <td>{partecipante.destinazione}</td>}
-                                        <td>{partecipante.email}</td>
-                                        <td>{partecipante.telefono}</td>
+                                        <td className="d-none d-md-table-cell">{partecipante.email}</td>
+                                        <td className="d-none d-md-table-cell">{partecipante.telefono}</td>
                                         <td>
                                             <button
                                                 className="btn btn-sm btn-outline-info"
                                                 onClick={() => handleCartellaSanitaria(partecipante)}
                                             >
-                                                <i className="fas fa-file-medical"></i> Cartella Sanitaria
+                                                <i className="fas fa-file-medical me-1"></i>
+                                                <span className="d-none d-sm-inline">Cartella Sanitaria</span> 
                                             </button>
                                         </td>
                                     </tr>

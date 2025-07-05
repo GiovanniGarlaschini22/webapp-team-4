@@ -1,69 +1,47 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import viaggiInCorso from "../../data/currentTrip";
 
-const AggiungiViaggio = () => {
-  const navigate = useNavigate();
-
-  const [titolo, setTitolo] = useState("");
-  const [descrizione, setDescrizione] = useState("");
+const AggiungiViaggio = ({ onAggiungi }) => {
+  const [destinazione, setDestinazione] = useState("");
   const [dataInizio, setDataInizio] = useState("");
   const [dataFine, setDataFine] = useState("");
   const [immagine, setImmagine] = useState("");
-  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!titolo.trim() || !descrizione.trim() || !dataInizio || !dataFine) {
-      setError("Tutti i campi (tranne immagine) sono obbligatori.");
-      return;
-    }
-
     const nuovoViaggio = {
       id: Date.now(),
-      titolo,
-      descrizione,
+      destinazione,
       dataInizio,
       dataFine,
-      immagine: immagine.trim()
-        ? immagine
-        : "https://via.placeholder.com/600x400?text=Nuovo+Viaggio",
+      immagine: immagine || "https://via.placeholder.com/600x400?text=Nuovo+Viaggio",
     };
 
-    viaggiInCorso.push(nuovoViaggio);
-    navigate("/viaggi");
+    onAggiungi(nuovoViaggio);
+
+    setDestinazione("");
+    setDataInizio("");
+    setDataFine("");
+    setImmagine("");
   };
 
   return (
-    <div className="container mt-4">
-      <h2>Aggiungi Nuovo Viaggio</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
-
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label className="form-label">Titolo</label>
-          <input
-            type="text"
-            className="form-control"
-            value={titolo}
-            onChange={(e) => setTitolo(e.target.value)}
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Descrizione</label>
-          <textarea
-            className="form-control"
-            value={descrizione}
-            onChange={(e) => setDescrizione(e.target.value)}
-            required
-          ></textarea>
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Data Partenza</label>
+    <form
+      onSubmit={handleSubmit}
+      className="card p-3 shadow-sm mb-4"
+      style={{ borderRadius: "15px" }}
+    >
+      <h5>Aggiungi Viaggio</h5>
+      <input
+        type="text"
+        placeholder="Destinazione"
+        className="form-control mb-2"
+        value={destinazione}
+        onChange={(e) => setDestinazione(e.target.value)}
+        required
+      />
+      <div className="row g-2 mb-2">
+        <div className="col">
           <input
             type="date"
             className="form-control"
@@ -72,9 +50,7 @@ const AggiungiViaggio = () => {
             required
           />
         </div>
-
-        <div className="mb-3">
-          <label className="form-label">Data Ritorno</label>
+        <div className="col">
           <input
             type="date"
             className="form-control"
@@ -83,22 +59,18 @@ const AggiungiViaggio = () => {
             required
           />
         </div>
-
-        <div className="mb-3">
-          <label className="form-label">URL Immagine (opzionale)</label>
-          <input
-            type="text"
-            className="form-control"
-            value={immagine}
-            onChange={(e) => setImmagine(e.target.value)}
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary mb-5">
-          Salva Viaggio
-        </button>
-      </form>
-    </div>
+      </div>
+      <input
+        type="text"
+        placeholder="URL Immagine"
+        className="form-control mb-2"
+        value={immagine}
+        onChange={(e) => setImmagine(e.target.value)}
+      />
+      <button type="submit" className="btn btn-primary">
+        Salva
+      </button>
+    </form>
   );
 };
 
